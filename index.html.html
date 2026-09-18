@@ -1,0 +1,3064 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>NDIAGA THIAM | Creative Designer</title>
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+:root{
+    --black:#020204;
+    --gold:#ffd166;
+    --gold2:#ffae00;
+    --blue:#00d9ff;
+    --purple:#a855f7;
+    --pink:#ff36d1;
+    --white:#ffffff;
+    --gray:#aaaaaa;
+    --green:#25D366;
+}
+
+body{
+
+    font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+    color:white;
+
+    background:#020204;
+
+    overflow-x:hidden;
+
+}
+
+
+/* =====================================================
+   ARRIÈRE-PLAN
+===================================================== */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-5;
+
+    background:
+
+    linear-gradient(
+        rgba(0,0,0,.55),
+        rgba(0,0,0,.75)
+    ),
+
+    url("images/background.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-attachment:fixed;
+
+}
+
+
+/* LUMIÈRES */
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-4;
+
+    pointer-events:none;
+
+    background:
+
+    radial-gradient(
+        circle at 10% 20%,
+        rgba(255,180,0,.20),
+        transparent 25%
+    ),
+
+    radial-gradient(
+        circle at 90% 15%,
+        rgba(0,217,255,.18),
+        transparent 25%
+    ),
+
+    radial-gradient(
+        circle at 50% 90%,
+        rgba(168,85,247,.20),
+        transparent 30%
+    );
+
+}
+
+
+/* =====================================================
+   SCROLLBAR
+===================================================== */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-track{
+    background:#020204;
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:
+    linear-gradient(
+        var(--gold),
+        var(--purple),
+        var(--blue)
+    );
+
+    border-radius:20px;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    z-index:9999;
+
+    background:
+    rgba(3,3,6,.75);
+
+    backdrop-filter:blur(20px);
+
+    border-bottom:
+    1px solid
+    rgba(255,255,255,.10);
+
+}
+
+
+.navbar{
+
+    max-width:1300px;
+
+    min-height:80px;
+
+    margin:auto;
+
+    padding:
+    0 30px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+
+.logo{
+
+    text-decoration:none;
+
+    font-size:23px;
+
+    font-weight:900;
+
+    letter-spacing:2px;
+
+    background:
+
+    linear-gradient(
+        90deg,
+        var(--gold),
+        white,
+        var(--purple),
+        var(--blue)
+    );
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+}
+
+
+/* =====================================================
+   MENU
+===================================================== */
+
+.menu{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:28px;
+
+    list-style:none;
+
+}
+
+
+.menu a{
+
+    position:relative;
+
+    text-decoration:none;
+
+    color:white;
+
+    font-size:14px;
+
+    font-weight:bold;
+
+    padding:10px 0;
+
+    transition:.3s;
+
+}
+
+
+.menu a:hover{
+
+    color:var(--gold);
+
+    text-shadow:
+    0 0 15px
+    rgba(255,209,102,.8);
+
+}
+
+
+/* =====================================================
+   BARRE ENTRE ACCUEIL ET LES AUTRES
+===================================================== */
+
+.menu li:first-child{
+
+    padding-right:28px;
+
+    border-right:
+    1px solid
+    rgba(255,209,102,.35);
+
+    position:relative;
+
+}
+
+
+.menu li:first-child::after{
+
+    content:"";
+
+    position:absolute;
+
+    right:-1px;
+
+    top:50%;
+
+    transform:
+    translateY(-50%);
+
+    width:1px;
+
+    height:30px;
+
+    background:
+
+    linear-gradient(
+        to bottom,
+        transparent,
+        var(--gold),
+        var(--blue),
+        transparent
+    );
+
+    box-shadow:
+
+    0 0 8px
+    var(--gold),
+
+    0 0 15px
+    var(--blue);
+
+}
+
+
+/* =====================================================
+   PETITE BARRE AVANT COMMANDER
+===================================================== */
+
+.menu li:last-child{
+
+    margin-left:5px;
+
+    padding-left:25px;
+
+    border-left:
+    1px solid
+    rgba(255,209,102,.25);
+
+}
+
+
+/* =====================================================
+   BOUTON COMMANDER
+===================================================== */
+
+.menu-order{
+
+    padding:
+    12px 22px !important;
+
+    border-radius:30px;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        var(--gold),
+        var(--gold2)
+    );
+
+    color:#000 !important;
+
+    box-shadow:
+
+    0 0 20px
+    rgba(255,209,102,.3);
+
+}
+
+
+.menu-order:hover{
+
+    transform:
+    translateY(-2px);
+
+    color:#000 !important;
+
+    box-shadow:
+
+    0 0 35px
+    rgba(255,209,102,.7);
+
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+
+    min-height:100vh;
+
+    padding:
+    150px 25px 100px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+}
+
+
+.hero-content{
+
+    max-width:1000px;
+
+}
+
+
+.subtitle{
+
+    color:var(--gold);
+
+    letter-spacing:7px;
+
+    font-size:14px;
+
+    font-weight:bold;
+
+    margin-bottom:25px;
+
+    text-shadow:
+    0 0 20px
+    rgba(255,209,102,.8);
+
+}
+
+
+.hero h1{
+
+    font-size:
+    clamp(60px,10vw,125px);
+
+    line-height:.86;
+
+    font-weight:900;
+
+    letter-spacing:-5px;
+
+    background:
+
+    linear-gradient(
+        90deg,
+        white,
+        var(--gold),
+        white,
+        var(--purple),
+        var(--blue)
+    );
+
+    background-size:300%;
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+    animation:
+    gradient 5s linear infinite;
+
+}
+
+
+@keyframes gradient{
+
+    0%{
+        background-position:0%;
+    }
+
+    50%{
+        background-position:100%;
+    }
+
+    100%{
+        background-position:0%;
+    }
+
+}
+
+
+.hero h2{
+
+    margin-top:30px;
+
+    font-size:
+    clamp(22px,3vw,35px);
+
+}
+
+
+.hero h2 span{
+
+    color:var(--gold);
+
+    text-shadow:
+    0 0 20px
+    var(--gold);
+
+}
+
+
+.hero p{
+
+    max-width:720px;
+
+    margin:
+    25px auto;
+
+    color:#ddd;
+
+    line-height:1.8;
+
+    font-size:17px;
+
+}
+
+
+.buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+    margin-top:35px;
+
+}
+
+
+.btn{
+
+    display:inline-block;
+
+    text-decoration:none;
+
+    padding:
+    16px 28px;
+
+    border-radius:50px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+
+.btn-gold{
+
+    background:
+
+    linear-gradient(
+        135deg,
+        var(--gold),
+        var(--gold2)
+    );
+
+    color:#000;
+
+    box-shadow:
+    0 0 25px
+    rgba(255,209,102,.3);
+
+}
+
+
+.btn-gold:hover{
+
+    transform:
+    translateY(-5px);
+
+    box-shadow:
+    0 0 40px
+    rgba(255,209,102,.7);
+
+}
+
+
+.btn-outline{
+
+    color:white;
+
+    border:
+    1px solid
+    var(--purple);
+
+    background:
+    rgba(168,85,247,.10);
+
+}
+
+
+.btn-outline:hover{
+
+    background:
+    var(--purple);
+
+    box-shadow:
+    0 0 30px
+    var(--purple);
+
+    transform:
+    translateY(-5px);
+
+}
+
+
+/* =====================================================
+   SECTIONS
+===================================================== */
+
+section{
+
+    padding:
+    110px 6%;
+
+    position:relative;
+
+}
+
+
+section::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    rgba(0,0,0,.18);
+
+    z-index:-1;
+
+}
+
+
+.section-title{
+
+    text-align:center;
+
+    margin-bottom:60px;
+
+}
+
+
+.section-title small{
+
+    color:var(--gold);
+
+    letter-spacing:5px;
+
+    font-weight:bold;
+
+}
+
+
+.section-title h2{
+
+    margin-top:15px;
+
+    font-size:
+    clamp(40px,6vw,65px);
+
+    background:
+
+    linear-gradient(
+        90deg,
+        white,
+        var(--gold),
+        var(--purple)
+    );
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+}
+
+
+.section-title p{
+
+    margin-top:15px;
+
+    color:#aaa;
+
+}
+
+
+/* =====================================================
+   SERVICES
+===================================================== */
+
+.services{
+
+    max-width:1250px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:25px;
+
+}
+
+
+.service-card{
+
+    min-height:270px;
+
+    padding:35px;
+
+    border-radius:25px;
+
+    background:
+
+    linear-gradient(
+        145deg,
+        rgba(10,10,18,.85),
+        rgba(10,10,18,.55)
+    );
+
+    backdrop-filter:blur(15px);
+
+    border:
+    1px solid
+    rgba(255,255,255,.12);
+
+    transition:.4s;
+
+}
+
+
+.service-card:hover{
+
+    transform:
+    translateY(-10px);
+
+    border-color:
+    var(--gold);
+
+    box-shadow:
+
+    0 0 35px
+    rgba(255,209,102,.20);
+
+}
+
+
+.service-icon{
+
+    font-size:45px;
+
+    margin-bottom:20px;
+
+    filter:
+    drop-shadow(
+        0 0 12px
+        var(--gold)
+    );
+
+}
+
+
+.service-card h3{
+
+    font-size:25px;
+
+    margin-bottom:15px;
+
+}
+
+
+.service-card p{
+
+    color:#aaa;
+
+    line-height:1.7;
+
+    margin-bottom:25px;
+
+}
+
+
+.service-link{
+
+    color:var(--gold);
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+}
+
+
+/* =====================================================
+   PORTFOLIO
+===================================================== */
+
+.portfolio-category{
+
+    max-width:1250px;
+
+    margin:
+    0 auto 100px;
+
+    scroll-margin-top:110px;
+
+}
+
+
+.category-header{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    margin-bottom:25px;
+
+    padding-bottom:15px;
+
+    border-bottom:
+    1px solid
+    rgba(255,255,255,.12);
+
+}
+
+
+.category-header h3{
+
+    font-size:30px;
+
+    color:var(--gold);
+
+    text-shadow:
+    0 0 15px
+    rgba(255,209,102,.5);
+
+}
+
+
+.category-header span{
+
+    color:#888;
+
+}
+
+
+.gallery{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:18px;
+
+}
+
+
+.project{
+
+    aspect-ratio:1/1;
+
+    overflow:hidden;
+
+    border-radius:20px;
+
+    cursor:pointer;
+
+    border:
+    1px solid
+    rgba(255,255,255,.12);
+
+    position:relative;
+
+    transition:.4s;
+
+}
+
+
+.project::after{
+
+    content:"🔍";
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:
+    rgba(0,0,0,.50);
+
+    font-size:30px;
+
+    opacity:0;
+
+    transition:.3s;
+
+}
+
+
+.project:hover::after{
+    opacity:1;
+}
+
+
+.project:hover{
+
+    transform:
+    translateY(-7px)
+    scale(1.02);
+
+    border-color:
+    var(--gold);
+
+    box-shadow:
+    0 0 30px
+    rgba(255,209,102,.25);
+
+}
+
+
+.project img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.5s;
+
+}
+
+
+.project:hover img{
+
+    transform:
+    scale(1.08);
+
+}
+
+
+/* =====================================================
+   LIGHTBOX
+===================================================== */
+
+.lightbox{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:20000;
+
+    background:
+    rgba(0,0,0,.94);
+
+    backdrop-filter:blur(15px);
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:30px;
+
+}
+
+
+.lightbox.active{
+
+    display:flex;
+
+}
+
+
+.lightbox-content{
+
+    max-width:90vw;
+
+    max-height:85vh;
+
+    position:relative;
+
+}
+
+
+.lightbox img{
+
+    max-width:90vw;
+
+    max-height:82vh;
+
+    object-fit:contain;
+
+    border-radius:12px;
+
+    box-shadow:
+    0 0 60px
+    rgba(255,209,102,.25);
+
+}
+
+
+.close-lightbox{
+
+    position:absolute;
+
+    right:0;
+
+    top:-55px;
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:50%;
+
+    background:
+    rgba(0,0,0,.7);
+
+    border:
+    1px solid
+    rgba(255,255,255,.3);
+
+    color:white;
+
+    font-size:28px;
+
+    cursor:pointer;
+
+}
+
+
+.nav-btn{
+
+    position:fixed;
+
+    top:50%;
+
+    transform:
+    translateY(-50%);
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    border:
+    1px solid
+    var(--gold);
+
+    background:
+    rgba(0,0,0,.7);
+
+    color:white;
+
+    font-size:32px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+.nav-btn:hover{
+
+    background:
+    var(--gold);
+
+    color:#000;
+
+    box-shadow:
+    0 0 30px
+    var(--gold);
+
+}
+
+
+.prev{
+    left:25px;
+}
+
+.next{
+    right:25px;
+}
+
+
+.image-counter{
+
+    position:fixed;
+
+    bottom:25px;
+
+    left:50%;
+
+    transform:
+    translateX(-50%);
+
+    padding:
+    9px 18px;
+
+    border-radius:30px;
+
+    background:
+    rgba(0,0,0,.75);
+
+    color:var(--gold);
+
+    border:
+    1px solid
+    rgba(255,209,102,.4);
+
+}
+
+
+/* =====================================================
+   TARIFS
+===================================================== */
+
+.pricing{
+
+    max-width:1100px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:25px;
+
+}
+
+
+.price-card{
+
+    padding:40px 30px;
+
+    text-align:center;
+
+    border-radius:25px;
+
+    background:
+    rgba(5,5,10,.80);
+
+    backdrop-filter:blur(15px);
+
+    border:
+    1px solid
+    rgba(255,255,255,.12);
+
+    transition:.4s;
+
+}
+
+
+.price-card:hover{
+
+    transform:
+    translateY(-10px);
+
+    border-color:
+    var(--gold);
+
+}
+
+
+.price-card.featured{
+
+    border-color:
+    var(--gold);
+
+    box-shadow:
+    0 0 40px
+    rgba(255,209,102,.15);
+
+}
+
+
+.price-card h3{
+
+    color:var(--gold);
+
+    font-size:25px;
+
+}
+
+
+.price{
+
+    font-size:40px;
+
+    font-weight:900;
+
+    color:var(--gold);
+
+    margin:20px 0;
+
+}
+
+
+.price-card ul{
+
+    list-style:none;
+
+    color:#aaa;
+
+    line-height:2;
+
+    margin-bottom:25px;
+
+}
+
+
+/* =====================================================
+   COMMANDE
+===================================================== */
+
+.order-box{
+
+    max-width:950px;
+
+    margin:auto;
+
+    padding:45px;
+
+    border-radius:30px;
+
+    background:
+    rgba(5,5,10,.84);
+
+    backdrop-filter:blur(18px);
+
+    border:
+    1px solid
+    rgba(255,209,102,.25);
+
+}
+
+
+.form-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:20px;
+
+}
+
+
+.input-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+}
+
+
+.full{
+
+    grid-column:
+    1/-1;
+
+}
+
+
+label{
+
+    color:#ddd;
+
+    font-weight:bold;
+
+    font-size:14px;
+
+}
+
+
+input,
+select,
+textarea{
+
+    width:100%;
+
+    padding:16px;
+
+    border-radius:13px;
+
+    background:
+    rgba(0,0,0,.65);
+
+    border:
+    1px solid
+    rgba(255,255,255,.14);
+
+    color:white;
+
+    outline:none;
+
+    font-size:15px;
+
+}
+
+
+input:focus,
+select:focus,
+textarea:focus{
+
+    border-color:
+    var(--gold);
+
+    box-shadow:
+    0 0 15px
+    rgba(255,209,102,.15);
+
+}
+
+
+option{
+    background:#111;
+}
+
+
+textarea{
+
+    min-height:150px;
+
+    resize:vertical;
+
+}
+
+
+.submit{
+
+    width:100%;
+
+    margin-top:25px;
+
+    padding:18px;
+
+    border:0;
+
+    border-radius:50px;
+
+    background:
+
+    linear-gradient(
+        90deg,
+        var(--gold),
+        var(--gold2),
+        var(--gold)
+    );
+
+    background-size:200%;
+
+    color:#000;
+
+    font-size:16px;
+
+    font-weight:900;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+.submit:hover{
+
+    background-position:100%;
+
+    transform:
+    translateY(-3px);
+
+    box-shadow:
+    0 0 35px
+    rgba(255,209,102,.55);
+
+}
+
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.contact{
+
+    text-align:center;
+
+}
+
+
+.contact-box{
+
+    max-width:850px;
+
+    margin:auto;
+
+    padding:60px 30px;
+
+    border-radius:30px;
+
+    background:
+    rgba(5,5,10,.82);
+
+    backdrop-filter:blur(18px);
+
+    border:
+    1px solid
+    rgba(255,255,255,.10);
+
+}
+
+
+.contact-box h2{
+
+    font-size:
+    clamp(35px,6vw,60px);
+
+    background:
+
+    linear-gradient(
+        90deg,
+        var(--gold),
+        white,
+        var(--purple)
+    );
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+}
+
+
+.contact-box p{
+
+    max-width:650px;
+
+    margin:
+    20px auto 30px;
+
+    color:#aaa;
+
+    line-height:1.7;
+
+}
+
+
+.whatsapp{
+
+    display:inline-block;
+
+    padding:
+    16px 25px;
+
+    border-radius:50px;
+
+    background:
+    var(--green);
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    box-shadow:
+    0 0 30px
+    rgba(37,211,102,.3);
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+
+    text-align:center;
+
+    padding:40px 20px;
+
+    background:
+    rgba(0,0,0,.70);
+
+    border-top:
+    1px solid
+    rgba(255,255,255,.10);
+
+    color:#777;
+
+}
+
+
+footer strong{
+
+    color:var(--gold);
+
+}
+
+
+/* =====================================================
+   WHATSAPP FLOTTANT
+===================================================== */
+
+.floating-whatsapp{
+
+    position:fixed;
+
+    right:22px;
+
+    bottom:22px;
+
+    width:60px;
+
+    height:60px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:
+    var(--green);
+
+    color:white;
+
+    font-size:28px;
+
+    text-decoration:none;
+
+    z-index:9999;
+
+    box-shadow:
+    0 0 30px
+    rgba(37,211,102,.5);
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:900px){
+
+    .menu{
+        gap:15px;
+    }
+
+    .menu li:first-child{
+        padding-right:15px;
+    }
+
+    .menu li:last-child{
+        padding-left:15px;
+    }
+
+    .services{
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+    .pricing{
+        grid-template-columns:1fr;
+    }
+
+    .gallery{
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .navbar{
+        padding:0 15px;
+    }
+
+    .logo{
+        font-size:17px;
+    }
+
+    .menu{
+        display:none;
+    }
+
+    .hero h1{
+        font-size:65px;
+    }
+
+    .services{
+        grid-template-columns:1fr;
+    }
+
+    .gallery{
+        grid-template-columns:
+        repeat(2,1fr);
+
+        gap:10px;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .full{
+        grid-column:auto;
+    }
+
+    .order-box{
+        padding:25px 18px;
+    }
+
+    .nav-btn{
+        width:45px;
+        height:45px;
+
+        font-size:25px;
+    }
+
+    .prev{
+        left:10px;
+    }
+
+    .next{
+        right:10px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+<nav class="navbar">
+
+<a href="#accueil" class="logo">
+NDIAGA THIAM
+</a>
+
+<ul class="menu">
+
+<li>
+<a href="#accueil">
+Accueil
+</a>
+</li>
+
+<li>
+<a href="#services">
+Services
+</a>
+</li>
+
+<li>
+<a href="#portfolio">
+Portfolio
+</a>
+</li>
+
+<li>
+<a href="#tarifs">
+Tarifs
+</a>
+</li>
+
+<li>
+<a href="#commande"
+class="menu-order">
+Commander
+</a>
+</li>
+
+</ul>
+
+</nav>
+
+</header>
+
+
+
+<!-- =====================================================
+     ACCUEIL
+===================================================== -->
+
+<section
+class="hero"
+id="accueil"
+>
+
+<div class="hero-content">
+
+<div class="subtitle">
+
+CRÉATIVITÉ • INNOVATION • PASSION
+
+</div>
+
+
+<h1>
+
+NDIAGA<br>
+
+THIAM
+
+</h1>
+
+
+<h2>
+
+Je donne vie à
+<span>vos idées.</span>
+
+</h2>
+
+
+<p>
+
+Graphisme, logo, branding,
+UI design et modélisation 3D.
+
+Je transforme vos idées en créations
+modernes, élégantes et professionnelles.
+
+</p>
+
+
+<div class="buttons">
+
+<a
+href="#services"
+class="btn btn-gold"
+>
+
+✦ Découvrir mes services
+
+</a>
+
+
+<a
+href="#portfolio"
+class="btn btn-outline"
+>
+
+🚀 Voir mon portfolio
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SERVICES
+===================================================== -->
+
+<section id="services">
+
+<div class="section-title">
+
+<small>
+CE QUE JE FAIS
+</small>
+
+<h2>
+Mes Services
+</h2>
+
+<p>
+Cliquez sur un service pour voir directement ses réalisations.
+</p>
+
+</div>
+
+
+<div class="services">
+
+
+<div class="service-card">
+
+<div class="service-icon">
+🎨
+</div>
+
+<h3>
+Poster
+</h3>
+
+<p>
+Création d'affiches modernes,
+élégantes et attractives pour
+événements, entreprises et réseaux sociaux.
+</p>
+
+<a
+href="#poster"
+class="service-link"
+>
+Voir les posters →
+</a>
+
+</div>
+
+
+
+<div class="service-card">
+
+<div class="service-icon">
+✦
+</div>
+
+<h3>
+Logo
+</h3>
+
+<p>
+Création de logos professionnels,
+uniques et mémorables pour
+votre marque ou votre entreprise.
+</p>
+
+<a
+href="#logo"
+class="service-link"
+>
+Voir les logos →
+</a>
+
+</div>
+
+
+
+<div class="service-card">
+
+<div class="service-icon">
+💎
+</div>
+
+<h3>
+Branding
+</h3>
+
+<p>
+Création d'identité visuelle complète :
+couleurs, typographies et univers graphique.
+</p>
+
+<a
+href="#branding"
+class="service-link"
+>
+Voir le branding →
+</a>
+
+</div>
+
+
+
+<div class="service-card">
+
+<div class="service-icon">
+🖥️
+</div>
+
+<h3>
+Design UI
+</h3>
+
+<p>
+Création d'interfaces modernes
+pour sites web et applications.
+</p>
+
+<a
+href="#ui"
+class="service-link"
+>
+Voir les designs UI →
+</a>
+
+</div>
+
+
+
+<div class="service-card">
+
+<div class="service-icon">
+🧊
+</div>
+
+<h3>
+Modélisation 3D
+</h3>
+
+<p>
+Création d'objets, produits,
+environnements et concepts en 3D.
+</p>
+
+<a
+href="#modelisation3d"
+class="service-link"
+>
+Voir les créations 3D →
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PORTFOLIO
+===================================================== -->
+
+<section id="portfolio">
+
+<div class="section-title">
+
+<small>
+MES RÉALISATIONS
+</small>
+
+<h2>
+Portfolio
+</h2>
+
+<p>
+Cliquez sur une image pour l'ouvrir en grand.
+</p>
+
+</div>
+
+
+
+<!-- POSTERS -->
+
+<div
+class="portfolio-category"
+id="poster"
+>
+
+<div class="category-header">
+
+<h3>
+🎨 Posters
+</h3>
+
+<span>
+4 réalisations
+</span>
+
+</div>
+
+
+<div class="gallery">
+
+<div class="project">
+<img src="images/poster1.jpg"
+alt="Poster 1">
+</div>
+
+<div class="project">
+<img src="images/poster2.jpg"
+alt="Poster 2">
+</div>
+
+<div class="project">
+<img src="images/poster3.jpg"
+alt="Poster 3">
+</div>
+
+<div class="project">
+<img src="images/poster4.jpg"
+alt="Poster 4">
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- LOGOS -->
+
+<div
+class="portfolio-category"
+id="logo"
+>
+
+<div class="category-header">
+
+<h3>
+✦ Logos
+</h3>
+
+<span>
+4 réalisations
+</span>
+
+</div>
+
+
+<div class="gallery">
+
+<div class="project">
+<img src="images/logo1.jpg"
+alt="Logo 1">
+</div>
+
+<div class="project">
+<img src="images/logo2.jpg"
+alt="Logo 2">
+</div>
+
+<div class="project">
+<img src="images/logo3.jpg"
+alt="Logo 3">
+</div>
+
+<div class="project">
+<img src="images/logo4.jpg"
+alt="Logo 4">
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- BRANDING -->
+
+<div
+class="portfolio-category"
+id="branding"
+>
+
+<div class="category-header">
+
+<h3>
+💎 Branding
+</h3>
+
+<span>
+4 réalisations
+</span>
+
+</div>
+
+
+<div class="gallery">
+
+<div class="project">
+<img src="images/branding1.jpg"
+alt="Branding 1">
+</div>
+
+<div class="project">
+<img src="images/branding2.jpg"
+alt="Branding 2">
+</div>
+
+<div class="project">
+<img src="images/branding3.jpg"
+alt="Branding 3">
+</div>
+
+<div class="project">
+<img src="images/branding4.jpg"
+alt="Branding 4">
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- UI -->
+
+<div
+class="portfolio-category"
+id="ui"
+>
+
+<div class="category-header">
+
+<h3>
+🖥️ Design UI
+</h3>
+
+<span>
+4 réalisations
+</span>
+
+</div>
+
+
+<div class="gallery">
+
+<div class="project">
+<img src="images/ui1.jpg"
+alt="UI 1">
+</div>
+
+<div class="project">
+<img src="images/ui2.jpg"
+alt="UI 2">
+</div>
+
+<div class="project">
+<img src="images/ui3.jpg"
+alt="UI 3">
+</div>
+
+<div class="project">
+<img src="images/ui4.jpg"
+alt="UI 4">
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- 3D -->
+
+<div
+class="portfolio-category"
+id="modelisation3d"
+>
+
+<div class="category-header">
+
+<h3>
+🧊 Modélisation 3D
+</h3>
+
+<span>
+4 réalisations
+</span>
+
+</div>
+
+
+<div class="gallery">
+
+<div class="project">
+<img src="images/3d1.jpg"
+alt="3D 1">
+</div>
+
+<div class="project">
+<img src="images/3d2.jpg"
+alt="3D 2">
+</div>
+
+<div class="project">
+<img src="images/3d3.jpg"
+alt="3D 3">
+</div>
+
+<div class="project">
+<img src="images/3d4.jpg"
+alt="3D 4">
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     TARIFS
+===================================================== -->
+
+<section id="tarifs">
+
+<div class="section-title">
+
+<small>
+MES FORMULES
+</small>
+
+<h2>
+Tarifs
+</h2>
+
+<p>
+Les tarifs sont adaptés à chaque projet.
+</p>
+
+</div>
+
+
+<div class="pricing">
+
+
+<div class="price-card">
+
+<h3>
+Essentiel
+</h3>
+
+<div class="price">
+Sur devis
+</div>
+
+<ul>
+
+<li>✓ Projet simple</li>
+<li>✓ Design professionnel</li>
+<li>✓ 1 proposition</li>
+<li>✓ Livraison digitale</li>
+
+</ul>
+
+<a
+href="#commande"
+class="btn btn-outline"
+>
+Commander
+</a>
+
+</div>
+
+
+
+<div
+class="price-card featured"
+>
+
+<h3>
+Professionnel
+</h3>
+
+<div class="price">
+Sur devis
+</div>
+
+<ul>
+
+<li>✓ Projet personnalisé</li>
+<li>✓ Plusieurs propositions</li>
+<li>✓ Modifications</li>
+<li>✓ Haute qualité</li>
+
+</ul>
+
+<a
+href="#commande"
+class="btn btn-gold"
+>
+Commander
+</a>
+
+</div>
+
+
+
+<div class="price-card">
+
+<h3>
+Premium
+</h3>
+
+<div class="price">
+Sur devis
+</div>
+
+<ul>
+
+<li>✓ Projet complet</li>
+<li>✓ Direction artistique</li>
+<li>✓ Branding</li>
+<li>✓ Accompagnement</li>
+
+</ul>
+
+<a
+href="#commande"
+class="btn btn-outline"
+>
+Commander
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     COMMANDE
+===================================================== -->
+
+<section id="commande">
+
+<div class="section-title">
+
+<small>
+VOTRE PROJET
+</small>
+
+<h2>
+Fiche de commande
+</h2>
+
+<p>
+Décrivez votre projet et envoyez votre demande directement sur WhatsApp.
+</p>
+
+</div>
+
+
+<div class="order-box">
+
+<form id="orderForm">
+
+<div class="form-grid">
+
+
+<div class="input-group">
+
+<label>
+Votre nom *
+</label>
+
+<input
+type="text"
+id="nom"
+placeholder="Ex : Mamadou Diop"
+required
+>
+
+</div>
+
+
+
+<div class="input-group">
+
+<label>
+Téléphone *
+</label>
+
+<input
+type="tel"
+id="telephone"
+placeholder="Ex : 77 000 00 00"
+required
+>
+
+</div>
+
+
+
+<div class="input-group">
+
+<label>
+Service *
+</label>
+
+<select
+id="service"
+required
+>
+
+<option value="">
+Choisir un service
+</option>
+
+<option>Poster</option>
+
+<option>Logo</option>
+
+<option>Branding</option>
+
+<option>Design UI</option>
+
+<option>Modélisation 3D</option>
+
+</select>
+
+</div>
+
+
+
+<div class="input-group">
+
+<label>
+Budget
+</label>
+
+<select id="budget">
+
+<option>
+À discuter
+</option>
+
+<option>
+Moins de 10 000 FCFA
+</option>
+
+<option>
+10 000 - 25 000 FCFA
+</option>
+
+<option>
+25 000 - 50 000 FCFA
+</option>
+
+<option>
+50 000 - 100 000 FCFA
+</option>
+
+<option>
+Plus de 100 000 FCFA
+</option>
+
+</select>
+
+</div>
+
+
+
+<div class="input-group">
+
+<label>
+Délai souhaité
+</label>
+
+<select id="delai">
+
+<option>
+Dès que possible
+</option>
+
+<option>
+24 heures
+</option>
+
+<option>
+2 - 3 jours
+</option>
+
+<option>
+1 semaine
+</option>
+
+<option>
+À définir
+</option>
+
+</select>
+
+</div>
+
+
+
+<div class="input-group">
+
+<label>
+Entreprise / Marque
+</label>
+
+<input
+type="text"
+id="entreprise"
+placeholder="Facultatif"
+>
+
+</div>
+
+
+
+<div class="input-group full">
+
+<label>
+Décrivez votre projet *
+</label>
+
+<textarea
+id="description"
+placeholder="Expliquez votre projet, les couleurs, textes, dimensions, inspirations..."
+required
+></textarea>
+
+</div>
+
+
+</div>
+
+
+<button
+type="submit"
+class="submit"
+>
+
+🚀 ENVOYER LA COMMANDE SUR WHATSAPP
+
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section class="contact">
+
+<div class="contact-box">
+
+<h2>
+Parlons de votre projet.
+</h2>
+
+<p>
+
+Vous avez une idée ?
+
+Une affiche, un logo, une identité visuelle,
+une interface ou un projet 3D ?
+
+Contactez directement NDIAGA THIAM.
+
+</p>
+
+<a
+href="https://wa.me/221767422823"
+target="_blank"
+class="whatsapp"
+>
+
+💬 WhatsApp :
++221 76 742 28 23
+
+</a>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+©
+
+<span id="year"></span>
+
+<strong>
+NDIAGA THIAM
+</strong>
+
+— Creative Designer.
+
+<br><br>
+
+Tous droits réservés.
+
+</footer>
+
+
+
+<!-- =====================================================
+     WHATSAPP FLOTTANT
+===================================================== -->
+
+<a
+href="https://wa.me/221767422823"
+target="_blank"
+class="floating-whatsapp"
+>
+
+💬
+
+</a>
+
+
+
+<!-- =====================================================
+     FENÊTRE IMAGE
+===================================================== -->
+
+<div
+class="lightbox"
+id="lightbox"
+>
+
+<div class="lightbox-content">
+
+<button
+class="close-lightbox"
+id="closeLightbox"
+>
+×
+</button>
+
+<img
+id="lightboxImage"
+src=""
+alt=""
+>
+
+</div>
+
+
+<button
+class="nav-btn prev"
+id="prevBtn"
+>
+‹
+</button>
+
+
+<button
+class="nav-btn next"
+id="nextBtn"
+>
+›
+</button>
+
+
+<div
+class="image-counter"
+id="imageCounter"
+>
+1 / 20
+</div>
+
+</div>
+
+
+
+<script>
+
+/* =====================================================
+   ANNÉE
+===================================================== */
+
+document.getElementById("year").textContent =
+new Date().getFullYear();
+
+
+
+/* =====================================================
+   GALERIE
+===================================================== */
+
+const projects =
+document.querySelectorAll(".project img");
+
+const lightbox =
+document.getElementById("lightbox");
+
+const lightboxImage =
+document.getElementById("lightboxImage");
+
+const closeLightbox =
+document.getElementById("closeLightbox");
+
+const prevBtn =
+document.getElementById("prevBtn");
+
+const nextBtn =
+document.getElementById("nextBtn");
+
+const imageCounter =
+document.getElementById("imageCounter");
+
+
+let currentImage = 0;
+
+
+/* =====================================================
+   OUVRIR UNE IMAGE
+===================================================== */
+
+projects.forEach(
+(image,index)=>{
+
+    image.parentElement.addEventListener(
+        "click",
+        ()=>{
+
+            currentImage = index;
+
+            showImage();
+
+            lightbox.classList.add(
+                "active"
+            );
+
+            document.body.style.overflow =
+            "hidden";
+
+        }
+    );
+
+});
+
+
+
+/* =====================================================
+   AFFICHER IMAGE
+===================================================== */
+
+function showImage(){
+
+    lightboxImage.src =
+    projects[currentImage].src;
+
+    lightboxImage.alt =
+    projects[currentImage].alt;
+
+    imageCounter.textContent =
+
+    (currentImage + 1)
+    +
+    " / "
+    +
+    projects.length;
+
+}
+
+
+
+/* =====================================================
+   SUIVANTE
+===================================================== */
+
+function nextImage(){
+
+    currentImage++;
+
+    if(
+        currentImage >=
+        projects.length
+    ){
+
+        currentImage = 0;
+
+    }
+
+    showImage();
+
+}
+
+
+
+/* =====================================================
+   PRÉCÉDENTE
+===================================================== */
+
+function previousImage(){
+
+    currentImage--;
+
+    if(
+        currentImage < 0
+    ){
+
+        currentImage =
+        projects.length - 1;
+
+    }
+
+    showImage();
+
+}
+
+
+
+/* =====================================================
+   BOUTONS
+===================================================== */
+
+nextBtn.addEventListener(
+    "click",
+    nextImage
+);
+
+prevBtn.addEventListener(
+    "click",
+    previousImage
+);
+
+
+
+/* =====================================================
+   FERMER
+===================================================== */
+
+closeLightbox.addEventListener(
+    "click",
+    closeBox
+);
+
+
+lightbox.addEventListener(
+    "click",
+    function(e){
+
+        if(
+            e.target === lightbox
+        ){
+
+            closeBox();
+
+        }
+
+    }
+);
+
+
+function closeBox(){
+
+    lightbox.classList.remove(
+        "active"
+    );
+
+    document.body.style.overflow =
+    "";
+
+}
+
+
+
+/* =====================================================
+   CLAVIER
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function(e){
+
+        if(
+            !lightbox.classList.contains(
+                "active"
+            )
+        ){
+
+            return;
+
+        }
+
+
+        if(
+            e.key === "ArrowRight"
+        ){
+
+            nextImage();
+
+        }
+
+
+        if(
+            e.key === "ArrowLeft"
+        ){
+
+            previousImage();
+
+        }
+
+
+        if(
+            e.key === "Escape"
+        ){
+
+            closeBox();
+
+        }
+
+    }
+);
+
+
+
+/* =====================================================
+   FORMULAIRE WHATSAPP
+===================================================== */
+
+document
+.getElementById("orderForm")
+.addEventListener(
+    "submit",
+    function(e){
+
+        e.preventDefault();
+
+
+        const nom =
+        document.getElementById(
+            "nom"
+        ).value;
+
+
+        const telephone =
+        document.getElementById(
+            "telephone"
+        ).value;
+
+
+        const service =
+        document.getElementById(
+            "service"
+        ).value;
+
+
+        const budget =
+        document.getElementById(
+            "budget"
+        ).value;
+
+
+        const delai =
+        document.getElementById(
+            "delai"
+        ).value;
+
+
+        const entreprise =
+        document.getElementById(
+            "entreprise"
+        ).value;
+
+
+        const description =
+        document.getElementById(
+            "description"
+        ).value;
+
+
+
+        const message =
+
+`Bonjour NDIAGA THIAM 👋
+
+Je souhaite passer une commande.
+
+━━━━━━━━━━━━━━━━━━
+
+👤 NOM :
+${nom}
+
+📱 TÉLÉPHONE :
+${telephone}
+
+🏢 ENTREPRISE / MARQUE :
+${entreprise || "Non précisé"}
+
+🎨 SERVICE :
+${service}
+
+💰 BUDGET :
+${budget}
+
+⏱️ DÉLAI :
+${delai}
+
+📝 DESCRIPTION :
+${description}
+
+━━━━━━━━━━━━━━━━━━
+
+Je souhaite avoir plus d'informations concernant mon projet.
+
+Merci 🙏`;
+
+
+
+        const url =
+
+        "https://wa.me/221767422823?text="
+        +
+        encodeURIComponent(message);
+
+
+        window.open(
+            url,
+            "_blank"
+        );
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
